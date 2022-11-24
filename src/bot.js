@@ -22,6 +22,7 @@ const arrStikers = []
 
 async function run() {
     console.log('run bot')
+    console.log(BOT_KEY)
     const bot = new Telegraf(BOT_KEY)
     bot.launch({
         webhook: {

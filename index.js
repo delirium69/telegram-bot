@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import { run } from './src/bot.js'
 
 const server = express()
-const port = 8080
+const port = 5050
 dotenv.config()
 
 server.get('/', (req, res) => {
@@ -14,4 +14,5 @@ server.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-// run();
+console.log('before run')
+run();
