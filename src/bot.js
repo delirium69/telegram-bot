@@ -21,6 +21,7 @@ const generateQuote = (d) =>
 const arrStikers = []
 
 async function run() {
+    console.log('run bot')
     const bot = new Telegraf(BOT_KEY)
     bot.launch({
         webhook: {
@@ -30,6 +31,7 @@ async function run() {
     })
 
     bot.start(async (ctx) => {
+        console.log('start')
         if (job) {
             ctx.reply('Уже запущено')
             return
