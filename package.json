@@ -1,0 +1,29 @@
+{
+    "name": "js-bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "ts-node index.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/express": "^4.17.14",
+        "@types/node-schedule": "^2.1.0",
+        "@typescript-eslint/eslint-plugin": "^5.43.0",
+        "@typescript-eslint/parser": "^5.43.0",
+        "eslint": "^8.28.0",
+        "prettier": "^2.7.1",
+        "typescript": "^4.9.3"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "ngrok": "^4.3.3",
+        "node-schedule": "^2.1.0",
+        "telegraf": "^4.11.2"
+    }
+}
