@@ -25,7 +25,7 @@ async function run() {
     bot.launch({
         webhook: {
             domain: 'https://telegram-bot-stoic.onrender.com',
-            port: 5050,
+            port: 8080,
         },
     })
 
