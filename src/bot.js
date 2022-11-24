@@ -1,10 +1,10 @@
+// eslint-disable-next-line no-undef
+import schedule from 'node-schedule';
 import { Telegraf } from 'telegraf'
-import ngrok from 'ngrok'
-import schedule = require('node-schedule')
-import { quotes } from './text'
-const BOT_KEY = process.env.BOT_KEY as string
+import { quotes } from './text.js'
+const BOT_KEY = process.env.BOT_KEY
 
-let job: null | schedule.Job = null
+let job = null
 let day = 6
 const stikersPacks = [
     'shelby_gang_by_fStikBot',
@@ -14,11 +14,11 @@ const stikersPacks = [
     'MrDoomer',
     'GachiiiPack',
 ]
-const rand = (max: number) => Math.floor(Math.random() * max)
-const generateQuote = (d: number) =>
+const rand = (max) => Math.floor(Math.random() * max)
+const generateQuote = (d) =>
     `День ${d + 3}\n${quotes[d][0]}\n${quotes[d][1]}\n${quotes[d][2]}`
 
-const arrStikers: Array<string> = []
+const arrStikers = []
 
 async function run() {
     const bot = new Telegraf(BOT_KEY)

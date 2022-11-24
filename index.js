@@ -1,16 +1,17 @@
-import express, { Express, Request, Response } from 'express'
+import express from 'express'
 import dotenv from 'dotenv'
-import { run } from './src/bot'
+import { run } from './src/bot.js'
 
 const server = express()
 const port = 8080
 dotenv.config()
 
-run()
-server.get('/', (req: Request, res: Response) => {
+server.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
 server.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+run();
