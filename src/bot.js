@@ -2,6 +2,7 @@
 import schedule from 'node-schedule';
 import { Telegraf } from 'telegraf'
 import { quotes } from './text.js'
+// import ngrok from 'ngrok'
 const BOT_KEY = process.env.BOT_KEY
 
 let job = null
@@ -21,8 +22,8 @@ const generateQuote = (d) =>
 const arrStikers = []
 
 async function run() {
-    console.log('run bot')
-    console.log(BOT_KEY)
+    // await ngrok.authtoken('2HuZIQJRBIsLd6IEHpiNnOEZ6CP_6QsJgrypATsGaBazNdV1f')
+    // const host = await ngrok.connect(8080)
     const bot = new Telegraf(BOT_KEY)
     bot.launch({
         webhook: {
@@ -32,7 +33,6 @@ async function run() {
     })
 
     bot.start(async (ctx) => {
-        console.log('start')
         if (job) {
             ctx.reply('Уже запущено')
             return
@@ -71,5 +71,5 @@ async function run() {
         ctx.sendSticker(sticker)
     })
 }
-
+// run();
 export { run }
