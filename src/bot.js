@@ -6,7 +6,7 @@ import { quotes } from './text.js'
 const BOT_KEY = process.env.BOT_KEY
 
 let job = null
-let day = 6
+let day = 7
 const stikersPacks = [
     'shelby_gang_by_fStikBot',
     'Patrick_Bateman',
@@ -28,7 +28,7 @@ async function run() {
     bot.launch();
     // bot.launch({
     //     webhook: {
-    //         domain: 'https://git.heroku.com/telegram-stoic-bot.git',
+    //         domain: host,
     //         port: 8080,
     //     },
     // })
@@ -70,6 +70,18 @@ async function run() {
         const sticker = arrStikers[rand(arrStikers.length)]
         ctx.reply(qute)
         ctx.sendSticker(sticker)
+    })
+
+    bot.command('dailyQuote', async (ctx) => {
+        const qute = generateQuote(day)
+        const sticker = arrStikers[rand(arrStikers.length)]
+        await ctx.reply(qute)
+        await ctx.sendSticker(sticker)
+    })
+
+    bot.command('test', (ctx) => {
+        ctx.reply(`Heroku server run stikers length ${arrStikers.length}`);
+
     })
 }
 // run();
