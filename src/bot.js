@@ -25,12 +25,13 @@ async function run() {
     // await ngrok.authtoken('2HuZIQJRBIsLd6IEHpiNnOEZ6CP_6QsJgrypATsGaBazNdV1f')
     // const host = await ngrok.connect(8080)
     const bot = new Telegraf(BOT_KEY)
-    bot.launch({
-        webhook: {
-            domain: 'https://telegram-bot-stoic.onrender.com',
-            port: 8080,
-        },
-    })
+    bot.launch();
+    // bot.launch({
+    //     webhook: {
+    //         domain: 'https://git.heroku.com/telegram-stoic-bot.git',
+    //         port: 8080,
+    //     },
+    // })
 
     bot.start(async (ctx) => {
         if (job) {
